@@ -1,3 +1,9 @@
+h1 {
+    font-family: "PT Sans", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
 .main-container {
     display: flex;
     justify-content: center;
@@ -22,10 +28,32 @@
 }
 
 .right-box {
-    width: 400px;
-    background-color: blue;
+    width: 600px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    position: relative;
 }
 
 .center-box {
     display: flex;
+}
+
+.arrow {
+    rotate: 180deg;
+    width: 20px;
+    filter: invert(1);
+    margin-left: 15px;
+}
+
+.start-button {
+    background-color: orange;
+    border:none;
+    color: white;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
 }
