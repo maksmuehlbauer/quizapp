@@ -1,59 +1,58 @@
-h1 {
-    font-family: "PT Sans", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-}
-
 .main-container {
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
 }
 
-.bg-color, ul li {
+.bg-color {
     background-color: purple !important;
+}
+
+ul, li {
+    background-color: purple !important;
+    color: white !important;
     font-size: 20px;
+    font-family: "Rubik", sans-serif;
+    font-weight: 400;
+}
+
+ul, li:last-child {
+    padding: 0 0 120px 0;
+} 
+
+.paddings {
+    padding: 0;
+}
+
+.custom-container {
+    overflow: hidden;
+    display: flex;
+
 }
 
 .logo-img {
-    width: 100px;
-    object-fit: cover;    
+    width: 100px !important;
+    object-fit: cover;
 }
 
-.left-box {
-    height: 500px;
-    background-color: purple;
+.card-size {
     width: 200px;
 }
 
-.right-box {
-    width: 600px;
-    border: 1px solid black;
+.logo-container {
+    width: 100%;
+    background-color: purple !important;
     display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
     justify-content: center;
-    position: relative;
+    align-items: center;
+    padding: 20px 0 40px 0;
 }
 
-.center-box {
-    display: flex;
-}
+.question-box {
+    background-image: url(./img/brainbg.jpg);
+    background-position: center;
+    background-size: cover;
 
-.arrow {
-    rotate: 180deg;
-    width: 20px;
-    filter: invert(1);
-    margin-left: 15px;
-}
-
-.start-button {
-    background-color: orange;
-    border:none;
-    color: white;
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
+    width: 100%;
 }

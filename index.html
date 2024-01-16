@@ -8,8 +8,10 @@
     <script src="script"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
       rel="stylesheet"
     />
 
@@ -27,34 +29,28 @@
     ></script>
   </head>
   <body>
-    <nav class="navbar bg-body-tertiary bg-color">
+    <nav class="navbar navbar-light bg-secondary">
       <div class="container-fluid">
-        <span class="navbar-brand mb-0 h1">Quizapp</span>
+        <span class="navbar-brand mb-0 h1 text-white">QuizApp</span>
       </div>
     </nav>
-
     <div class="main-container">
-      <div class="center-box">
-        <div class="left-box rounded-start-4">
-          <div class="d-flex flex-column">
-            <div
-              class="p-5 bg-color align-self-sm-center justify-content-center rounded-start-5"
-            >
-              <img src="./img/logo.png" class="logo-img" />
-            </div>
-            <div class="px-5 p-3 fw-semibold text-white bg-color">HTML</div>
-            <div class="px-5 p-3 fw-semibold text-white bg-color">CSS</div>
-            <div class="px-5 p-3 fw-semibold text-white bg-color">JS</div>
-            <div class="px-5 p-3 fw-semibold text-white bg-color">Java</div>
+      <div class="container-sm border rounded-4 p-0 custom-container">
+        <div class="card border-0 card-size">
+          <div class="logo-container">
+            <img src="./img/logo.png" class="card-img-top bg-color logo-img" />
           </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item border-0 px-5 py-3">HTML</li>
+            <li class="list-group-item border-0 px-5 py-3">CSS</li>
+            <li class="list-group-item border-0 px-5 py-3">JS</li>
+            <li class="list-group-item border-0 px-5 py-3">JAVA</li>
+          </ul>
         </div>
-        <div class="right-box rounded-end-4">
-          <h1 class="fw-bold">Welcome to <br>The Awesome HTML Quiz</h1>
-          <h2 class="fw-normal">Ready for the Challenge</h2>
-
-          <button class="start-button rounded-2 px-4 py-2">Start Now <img src="./img/skip.png" class="arrow"></button>
+        <div class="question-box">
         </div>
       </div>
+      
     </div>
   </body>
 </html>
