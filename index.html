@@ -36,25 +36,24 @@
       </div>
     </nav>
     <div id="main-container" class="main-container">
-      <div class="container-sm border rounded-4 p-0 custom-container">
+      <div class="custom-container border rounded-4 p-0">
         <div class="card border-0 card-size">
           <div class="logo-container">
             <img src="./img/logo.png" class="card-img-top bg-color logo-img" />
           </div>
-          <ul class="list-group list-group-flush">
+          <ul class="list-group list-group-flush border-custom-r">
             <li id="li_0" class="list-group-item border-0 px-5 py-3">HTML</li>
             <li id="li_1" class="list-group-item border-0 px-5 py-3">JS</li>
             <li id="li_2" class="list-group-item border-0 px-5 py-3">PYTHON</li>
             <li id="li_3" class="list-group-item border-0 px-5 py-3">C++</li>
           </ul>
+          <button type="button" id="next" class="btn btn-warning px-3 btn-next" onclick="nextQuestion()" disabled>next Question</button>
         </div>
         <div id="question-box" class="question-box">
          
         </div>
       </div>
-      <div class="question-control">
-        <button id="next" class="btn-next-prev" onclick="nextQuestion()" disabled>></button>
-      </div>
+        
     </div>
   </body>
 </html>

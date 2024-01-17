@@ -122,7 +122,7 @@ function generateShowScoreHtml() {
     return /*html*/ `
     <img src="./img/brain-result.png" class="complete-img">
     <h1 class="score-h1">Complete<br>HTML Quiz</h1>
-    <h2 class="score-h2"><span class="text-success px-5">your score:</span> ${score} / 4</h2>
+    <h2 class="score-h2"><span class="text-success px-5 custom-padding-h2">your score: <br class="br-none"></span> ${score} / 4</h2>
     <button type="button" class="btn btn-primary mt-4 px-5 f-custom">SHARE</button>
     <button type="button" class="btn btn-light mt-1 px-5 f-custom text-primary" onclick="startNewGame()">Replay</button>
 `
