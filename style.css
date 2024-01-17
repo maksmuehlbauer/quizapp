@@ -1,6 +1,7 @@
 .main-container {
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -15,11 +16,16 @@ ul, li {
     font-size: 20px;
     font-family: "Rubik", sans-serif;
     font-weight: 400;
+    color: gray !important;
 }
 
 ul, li:last-child {
     padding: 0 0 148px 0;
 } 
+
+.highlight {
+    color: white !important;
+}
 
 .paddings {
     padding: 0;
@@ -90,14 +96,19 @@ h2 {
     background-color: rgb(255, 166, 0) !important;
 }
 
-.question-button {
+.answer-design {
     width: 400px;
     background-color: lightgray;
-    display: flex;
+    display: flex !important;
+    flex-direction: row !important;
     align-items: center;
     padding: 8px 0 8px 8px;
     margin: 0 0 24px 0;
     cursor: pointer;
+}
+
+.answer-design:hover {
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 .nr-box {
@@ -110,7 +121,7 @@ h2 {
     margin: 0 20px 0 0;
     font-family: "Rubik", sans-serif;
     font-weight: bold;
-    font-size: 24px
+    font-size: 24px;
 }
 
 .font-style-h1 {
@@ -126,10 +137,7 @@ h2 {
 }
 
 .question-control {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    width: 400px;
     display: flex;
     justify-content: space-between;
 }
@@ -139,4 +147,42 @@ h2 {
     height: 48px;
     margin: 8px;
     border-radius: 99999px !important;
+}
+
+.correct-answer {
+    background-color: rgba(48,242,100,0.7) !important;
+}
+
+.wrong-answer {
+    background-color: rgba(245,22,29,0.7) !important;
+}
+
+.complete-img {
+    width: 120px;
+}
+
+.score-h1 {
+    margin: 40px 0 !important;
+    font-family: "Rubik", sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    text-transform: uppercase;
+}
+
+.score-h2 {
+    font-family: "Rubik", sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    text-transform: uppercase;
+}
+
+.f-custom {
+    font-family: "Rubik", sans-serif !important;
+    font-weight: bold;
+    font-size: 20px !important;
+    text-transform: uppercase;
+}
+
+.d-none {
+    display: none;
 }
