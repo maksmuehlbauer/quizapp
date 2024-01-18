@@ -36,22 +36,30 @@ let questions = [
 
 let currentQuestion = 0;
 let score = 0;
+let AUDIO_SUCCESS = new Audio('./audio/success.mp3')
+let AUDIO_WRONG = new Audio('./audio/wrong.mp3')
 
 
 function render() {
     document.getElementById('question-box').innerHTML = '';
-    document.getElementById('question-box').innerHTML += /*html*/`
-         <h1>Welcome to <br> The Awesome HTML Quiz</h1>
-          <h2>Ready for the Challenge?</h2>
-          <button id="start-button" type="button" class="btn btn-warning btn-custom-design" onclick="startQuiz(currentQuestion)">START NOW</button>
-    `
+    document.getElementById('next').classList.remove('d-none')
+    document.getElementById('next').innerHTML = `next Question`
+    document.getElementById('question-box').innerHTML += generateRenderHtml();
+}
+
+function generateRenderHtml() {
+    return /*html*/`
+    <h1>Welcome to <br> The Awesome HTML Quiz</h1>
+    <h2>Ready for the Challenge?</h2>
+    <button id="start-button" type="button" class="btn btn-warning btn-custom-design" onclick="startQuiz(currentQuestion)">START NOW</button>
+    
+`
 }
 
 function startQuiz() {
     highlightedQuestion();
     let question = questions[currentQuestion];
     let qBox = document.getElementById('question-box'); 
-
     qBox.innerHTML = '';
     qBox.innerHTML += generateQuizHtml(question);
 }
@@ -61,38 +69,52 @@ function answerLogic(selection) {
     let question = questions[currentQuestion];
     let selectionNumber = selection.slice(-1);
     let idOfRightAnswer = `answer_${question['right_answer']}`;
-
-    if (selectionNumber == question['right_answer']) {
+    if (proofOfCorrentAnswer(selectionNumber, question)) {
         score += 1
+        AUDIO_SUCCESS.play();
         document.getElementById(selection).classList.add('correct-answer')
     } else {
+        AUDIO_WRONG.play();
         document.getElementById(selection).classList.add('wrong-answer')
         document.getElementById(idOfRightAnswer).classList.add('correct-answer')
     };
-    enableButtons();
+    disableAnswerButtons();
+    enableSkipButton();
+}
+
+function proofOfCorrentAnswer(selectionNumber, question) {
+    return selectionNumber == question['right_answer']
+}
+
+function disableAnswerButtons() {
+    document.getElementById('answer_1').style = "pointer-events:none";
+    document.getElementById('answer_2').style = "pointer-events:none";
+    document.getElementById('answer_3').style = "pointer-events:none";
+    document.getElementById('answer_4').style = "pointer-events:none";
 }
 
 
-function enableButtons() {
+function enableSkipButton() {
     document.getElementById('next').disabled = false;
 }
 
 
-function disableButtons() {
+function disableSkipButton() {
     document.getElementById('next').disabled = true;
 }
 
 
 function nextQuestion() {
-    
     currentQuestion += 1;
     if (currentQuestion == questions.length) {
         showScore();
-        disableButtons();
+        disableSkipButton();
     } else {
-        
+        if (currentQuestion == questions.length - 1){
+            document.getElementById('next').innerHTML = `finish`
+        }
         startQuiz();
-        disableButtons();
+        disableSkipButton();
     }
 }
 
@@ -116,23 +138,26 @@ function showScore() {
     qBox.innerHTML = '';
     qBox.innerHTML += generateShowScoreHtml();
     document.getElementById('li_3').classList.remove('highlight')
+    document.getElementById('next').classList.add('d-none')
 }
+
 
 function generateShowScoreHtml() {
     return /*html*/ `
     <img src="./img/brain-result.png" class="complete-img">
     <h1 class="score-h1">Complete<br>HTML Quiz</h1>
     <h2 class="score-h2"><span class="text-success px-5 custom-padding-h2">your score: <br class="br-none"></span> ${score} / 4</h2>
-    <button type="button" class="btn btn-primary mt-4 px-5 f-custom">SHARE</button>
     <button type="button" class="btn btn-light mt-1 px-5 f-custom text-primary" onclick="startNewGame()">Replay</button>
 `
 }
+
 
 function startNewGame() {
     currentQuestion = 0;
     score = 0;
     render();
 }
+
 
 function generateQuizHtml(question) {
     return /*html*/ `
